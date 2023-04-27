@@ -25,12 +25,6 @@ namespace BasicDemo
                 .ConfigureAppConfiguration((hostingContext, builder) =>
                 {
                     IHostEnvironment env = hostingContext.HostingEnvironment;
-                    builder.Sources.Clear();
-
-
-                    // need to exit and reset Visual Studio to pick up changes in environment variables;
-                    var myenvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-                    var xy = Environment.GetEnvironmentVariables();
 
                     builder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
                     builder.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
