@@ -18,10 +18,6 @@ namespace BasicDemo
             var myenvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             CreateHostBuilder(args).Build().Run();
 
-
-
-
-
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -31,6 +27,8 @@ namespace BasicDemo
                     IHostEnvironment env = hostingContext.HostingEnvironment;
                     builder.Sources.Clear();
 
+
+                    // need to exit and reset Visual Studio to pick up changes in environment variables;
                     var myenvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
                     var xy = Environment.GetEnvironmentVariables();
 
